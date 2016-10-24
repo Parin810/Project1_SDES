@@ -1,0 +1,114 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{todonotes}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage[titletoc]{appendix}
+
+
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mypink}{rgb}{7,0.5,5}
+\title{Lotka-Volterra Predator-Prey Model}
+\author{Rollno:153076005, Name:Parin Chheda}
+\setcounter{secnumdepth}{3}
+\begin{document}
+	\maketitle
+	\section*{introduction}
+	Many of the interesting dynamics in the biological world have to do with the interaction between two species.\textbf{Predation} describes an interaction in which the predator hunts its prey down.This interaction between predator and prey important in sustaining an \textbf{equilibrium} between different animal species. In the absence of predators, the number of prey would increase rapidly and force other species to extinction due to competition. On the contrary, without prey, there would not be any predator!\cite{AmritaUniversity}
+	\\
+	\newline The Lotka-Volterra Predator-Prey Model attempts to model these interactions between predator and prey by devisiing a mathematical model.This model accounts for population growth or decline based on predator-prey interactions.
+	\section{Lotka-Volterra Equations}
+	The \textbf{Lotka-Volterra equations} are a pair of first-order, non-linear, differential equations as described below.
+	\begin{equation}
+	\frac{dx}{dt}=\alpha\text{x} - \beta\text{xy}
+	\end{equation}
+	\begin{equation}
+	\frac{dy}{dt}=\delta\text{xy} - \gamma\text{y}
+	\end{equation}
+	where
+	\begin{itemize}
+		\item \emph{x} is the number of prey
+		\item \emph{y} is the number of predator
+		\item $\alpha$  \text{is the natural growth rate of prey in absence of predator}
+		\item $\beta$ \text{is death rate per interaction due to predation} 
+		\item $\delta$ \text{is the rate constant of turning predated \emph{x} into \emph{y}ord or phrase} 
+		\item $\gamma$ \text{is the natural death rate of predator in absence of preyor phrase} 
+		\item $\alpha$,$\beta$,$\gamma$ and $\delta$ are collectively referred to as parameters describing the interaction between two species.
+	\end{itemize}
+	To simplify the model the following assumptions are made:
+	\begin{enumerate}
+		\item The predator species is totally dependent on a single prey species for its food.
+		\item The prey species has unlimited foodsupply.
+		\item The only threat to prey is the predator.
+	\end{enumerate}
+	\section{Solution to the equations}
+	The solutions to these differential equations are periodic in nature. With the interaction parameters assumed to be non-negative, the solution resembles a simple harmonic motion with the a phase shift of \textbf{90\textdegree}  between the predator and prey populations. Refer to figure1 below to see an example plot of the solutions over time.
+	\\
+	The phase plot will reveal more interesting aspects of the solution. In the plot shown in figure 2 the prey numbers are plotted against predator numbers.
+	\begin{figure}[p]
+		\centering
+		\includegraphics[scale=0.5]{frequencyplot1.jpg}
+		\caption{153076005}
+		\label{fig:freqeuncyplot1}
+	\end{figure}
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale=0.5]{phaseplot1.jpg}
+		\caption{153076005}
+		\label{fig:phasespaceplot1}
+	\end{figure}
+	\\
+	The phase plot tells us that the population of predator and prey oscillates around a certain point.The population of prey is large when there are less number of predators, however overtime the population of predators increase due to abundant supply of food. This leads to a decrease in the number of prey.Now, the predator population will face scarcity of food and eventually die.This event will again trigger an increase in the prey population and the cycle continues as shown in the figure.
+		
+	\section{Stationary Points}
+	It is interesting to points on the where the derivative $\frac{dx}{dt}$,$\frac{dy}{dt}=0$.It turns out that we get two critical/stationary points (0,0) and ($\frac{\delta}{\gamma}$,$\frac{\alpha}{\beta}$).
+	\\
+	The vector plot presentated in the figure 3 below plots the nature of the solutions near the crtical point s where s=($\frac{\delta}{\gamma}$,$\frac{\alpha}{\beta}$).
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale=0.5]{vectorplot.jpg}
+		\caption{153076005}
+		\label{fig:vectorplot1}
+	\end{figure}
+	As it can be seen from the figure the soltuions oscilliate aroung the point 's' with changing amplitudes depending on the numbers of prey and predator.\cite{Mathnathan}
+	
+	\section{Solution trajectories for different initial values of predator and prey}
+	To understand the solutions better, we are plotting the nature of the solutions for diffrerent inital values of predator and prey. Since this is a theoretical model decimal values of initial numbers are permissible.
+	\\
+	The plot takes a set of initial values from a csv file named "initial.csv".
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{multiplephaseplot.jpg}
+		\caption{153076005}
+		\label{fig:phaseplot2}
+	\end{figure}
+	
+\section{Conclusion}
+\begin{itemize}
+	\item As we can see from the plots above each solution is an enclosed encirclement i.e. it is a periodic oscillation on its own.
+	\item Any pertubation can drive the oscillation to a different cycle.
+	\item if any of the predator or prey numbers start with zero eventually both the populations die off.
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{frequencyplot_zero_initialvalue.jpg}
+		\caption{153076005}
+		\label{fig:zero_initialvalue}
+	\end{figure}
+\end{itemize}
+\section{Animation}
+An animation of the solution of the equations with predefined parameters and intial values sotred in data.csv file.
+\\
+link : \href{153076005.html}{Animation}
+\bibliographystyle{plain}
+\bibliography{references.bib}
+
+\end{document}
+
+
+
